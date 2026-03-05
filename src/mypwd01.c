@@ -62,6 +62,10 @@ int main(int argc,char *argv[]){
         }
         
     }
+    else{
+        printf("pwd: Invalid option %s\n",argv[1]);
+        printf("Try 'mypwd --help' for more information");
+    }
     return 0;
     
         
