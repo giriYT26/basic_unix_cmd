@@ -31,6 +31,7 @@ int main(int argc,char *argv[]){
         }
         else if ((*(*argv+1) == 'h' || *(*argv+1) == 'H') && (*argv)[2] == '\0'){
             help();
+            return 0;
         }
         else break;
         //argc--;
