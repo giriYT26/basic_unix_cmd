@@ -28,7 +28,11 @@ int main(int argc,char *argv[]){
         }
         else if ((*(*argv+1) == 'e' || *(*argv+1) == 'E') && (*argv)[2] == '\0'){
             eflag = 1;
-        }else break;
+        }
+        else if ((*(*argv+1) == 'h' || *(*argv+1) == 'H') && (*argv)[2] == '\0'){
+            help();
+        }
+        else break;
         //argc--;
         argv++;
     }
