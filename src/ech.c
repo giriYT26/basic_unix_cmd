@@ -43,32 +43,39 @@ int main(int argc,char *argv[]){
         }
         printf("\n");
     }else if ((nflag == 1 || nflag == 0 ) && eflag == 1){
-        //printf("%s",*argv);
-        char *p = *argv;
-        while (*p){
-            if (*p == '\\'){
+        while (*argv){
+            char *p = *argv;
+            while (*p){
+                if (*p == '\\'){
+                    p++;
+                    switch (*p)
+                    {
+                    case 'n':
+                        printf("\n");
+                        break;
+                    case 't':
+                        printf("\t");
+                        break;
+                    case '\\':
+                        printf("\\");
+                        break;
+                    case 'r':
+                        printf("\r");
+                        break;
+                    case 'c':
+                        return 0;
+                        break;
+                    default:
+                        printf("%c",*p);
+                        break;
+                    }
+                }else printf("%c",*p);
                 p++;
-                switch (*p)
-                {
-                case 'n':
-                    printf("\n");
-                    break;
-                case 't':
-                    printf("\t");
-                    break;
-                case '\\':
-                    printf("\\");
-                    break;
-                case 'r':
-                    printf("\r");
-                    break;
-                default:
-                    printf("%c",*p);
-                    break;
-                }
-            }else printf("%c",*p);
-            p++;
+            }
+            argv++;
+            if (*argv){
+                printf(" ");
+            }
         }
     }
-
 }
