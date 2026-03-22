@@ -42,11 +42,19 @@ int main(int argc,char *argv[]){
         while (*argv)
         {   
             if (eflag == 0){
-                printf("%s",*argv);
+                printf("%s ",*argv);
             }
             argv++;
         }
         printf("\n");
+    }else if (nflag == 0 && eflag == 0){
+                char **w = argv;
+                while (*w){ 
+                    printf("%s ",*w);
+                    w++;
+                //argv++; 
+                }
+        
     }else if ((nflag == 1 || nflag == 0 ) && eflag == 1){
         while (*argv){
             char *p = *argv;
